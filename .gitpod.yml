@@ -1,0 +1,19 @@
+image: jelaniwoods/appdev2021-vanilla-rails@sha256:35d5756428cbae11f43a94c92d6c384626b1ead2287738299b6010c4e588e781
+
+tasks:
+  - command: bundle install
+  - init: bin/setup
+ports:
+  - port: 3000
+    onOpen: open-preview
+    visibility: public
+  - port: 5432
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - shd101wyy.markdown-preview-enhanced
+    - vortizhe.simple-ruby-erb
+    - CraigMaslowski.erb
+    - Vense.rails-snippets
+    - wingrunr21.vscode-ruby
