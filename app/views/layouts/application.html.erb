@@ -27,10 +27,13 @@
         </header> 
       </div> 
       <div id="route-container">
-        <div id="router-outlet"></div>
+        <div id="router-outlet"><%= request.path %></div>
       </div>  
 
+      <%= @raw_data %>
+
       <%= render 'javascript/app' %>
+      <%= render 'utils/stories' %>
 
     <%= yield %>
     </div> 
