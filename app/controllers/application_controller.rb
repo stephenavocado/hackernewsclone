@@ -24,14 +24,15 @@ class ApplicationController < ActionController::Base
     if isHomeRoute 
       path = '/news'
     elsif isNewRoute
-      path = 'newest'
+      path = '/newest'
     else
       path = request.path
     end 
       
     url = "https://node-hnapi.herokuapp.com#{path}"
     hasStories = open(url).read.length > 0
-    @raw_data = hasStories ? open(url).read : 'No stories' 
+    raw_stories = hasStories ? open(url).read : 'No stories'
+    @parsed_stories = JSON.parse(raw_stories)
   end
 
 end

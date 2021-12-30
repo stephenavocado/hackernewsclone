@@ -14,7 +14,7 @@
  *= require_self
  */
 
- html,
+html,
 body {
   padding: 0;
   margin: 8px;
@@ -48,7 +48,7 @@ header .flex a {
 }
 
 .gray {
-  margin-top: 0.25em;
+  margin-bottom: 0.5em;
   color: #828282;
 }
 
@@ -61,7 +61,7 @@ header .flex a {
 }
 
 .story {
-  padding-top: 0.25em;
+  padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 

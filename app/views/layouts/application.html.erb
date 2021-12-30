@@ -27,10 +27,12 @@
         </header> 
       </div> 
       <div id="route-container">
-        <div id="router-outlet"><%= request.path %></div>
+        <div id="router-outlet">
+          <% if request.path != "/favorites" %>
+            <%= render 'application/story' %>
+          <% end %>
+        </div>
       </div>  
-
-      <%= @raw_data %>
 
       <%= render 'javascript/app' %>
       <%#= render 'utils/stories' %>
