@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :get_stories
+  before_action :get_stories, except: [:favorites]
   
   def index
     render({:template => "application/index"})
@@ -30,7 +30,8 @@ class ApplicationController < ActionController::Base
     end 
       
     url = "https://node-hnapi.herokuapp.com#{path}"
-    @raw_data = open(url).read
+    hasStories = open(url).read.length > 0
+    @raw_data = hasStories ? open(url).read : 'No stories' 
   end
 
 end
