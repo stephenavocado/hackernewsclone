@@ -1,0 +1,36 @@
+<!-- 
+
+<script>
+
+export default function Comment(comment) {
+
+  const hasNestedComments = @comments.comments.length > 0 %>
+
+  function Comment(comment) {
+    return `
+      <div class="nested-comments-<%= comment["level"] %>">
+        <p class="comment-header">
+          <%= comment["user"] %> | <%= comment["time_ago"] %>
+        </p>
+          <%= comment["content"] %>
+      </div>
+    `
+  }
+}
+
+</script>
+--> 
+
+<div class="nested-comments-<%= comment["level"] %>">
+  <p class="comment-header">
+    <%= comment["user"] %> | <%= comment["time_ago"] %>
+  </p>
+  <%= comment["content"] %>
+  <% hasNestedComments = comment["comments"].length > 0 %>
+  <% if hasNestedComments %>
+    <% comment["comments"].each do |nested_comment| %>
+      hello
+    <% end %>
+  <% else %>
+  <% end %>
+</div>

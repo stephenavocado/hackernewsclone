@@ -1,0 +1,31 @@
+<div class="story">
+  <div>
+    <span class="gray"></span>
+    <span class="upvote">▲</span>
+    <a href="<%= @parsed_story["url"] %>"><%= @parsed_story["title"] %></a>
+    <span><%= @parsed_story["domain"] %></span>
+  </div>    
+</div>
+<div>
+  <div class="gray">
+    <%= @parsed_story["points"] %> points by <%= @parsed_story["user"] %> <%= @parsed_story["time_ago"] %>
+    |
+    <a href="/item/<%= @parsed_story["id"] %>">
+      <%= @parsed_story["comments_count"] %> comments
+    </a>
+    |
+    <span class="favorite">
+      <img class="heart" src="https://icon.now.sh/heart/ccc">
+      Add To Favorites
+    </span>
+  </div>
+</div>
+<hr/>
+
+<% if @hasComments %>
+  <% @comments.each do |a_comment| %>
+    <%= render 'application/comment', { :comment => a_comment } %>
+  <% end %>
+<% else %>
+  No Comments
+<% end %>

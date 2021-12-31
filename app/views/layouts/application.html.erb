@@ -28,8 +28,12 @@
       </div> 
       <div id="route-container">
         <div id="router-outlet">
-          <% if request.path != "/favorites" %>
-            <%= render 'application/story' %>
+          <% if request.path != "/favorites" && request.path.first(5) != "/item" %>
+            <% @parsed_stories.each_with_index do |story, index| %>
+              <%= render 'application/story', { :the_story => story, :the_index => index }  %>
+            <% end %>
+          <% elsif request.path.first(5) == "/item" %>
+            <%= render 'application/item' %>        
           <% end %>
         </div>
       </div>  

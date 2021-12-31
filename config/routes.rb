@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/ask'        =>  'application#ask'
   get '/show'       =>  'application#show'
   get '/favorites'  =>  'application#favorites'
+  get '/item/:item_id'      =>  'application#item'
 
 end
